@@ -1,0 +1,32 @@
+DOKAZOVANJE EKVIVALENC MED PROGRAMI
+
+1. trditev: obrni[x] = [x]
+   
+   obrni[x] = obrni x :: [] = obrni[] @ [x] = [] @ [x] = [x]
+   
+2. trditrv: dolzina (xs @ ys) = dolzina xs + dolzina ys
+
+    xs = []: dolzina([]@ys)= dolzina ys
+	0: dolzina[] + dolzina ys = 0 + dolzina ys 
+	x::xs dolzina(x::xs @ ys) = dolzina x ::(xs @ ys)= 1 + dolzina (xs @ys) = 1 + dolzina xs + dolzina ys = dolzina(x::xs) + dolzina ys
+	
+3. trditev: ....
+
+
+4. trditev: xs @ (ys @ zs) = (xs @ ys) @zs 
+
+	indukcija po x-u
+	xs = []: [] @ (ys @ zs) = ys @ zs = ([]@sy)@zs
+	x -> x::xs: x::xs @ (sy@zs) = x::(xs@(ys@zs)) = x::((xs@ys)@zs) = (x::(xs@ys))@zs = ((x:xs)@ys)@zs 
+	
+5. trditev: obrni (xs@ys)= obrni ys @ obrni xs
+
+	x = []:  obrni([] @ ys) = obrni ys = obrni[ys]@[] = obrni[ys] @ obrni[] 
+	x -> x::xs: obrni(x::xs @ ys) = obrni(x::(xs@ys)) = obrni(xs@ys) @ [x] = ˙inducijska predpostvaka = 
+		= obrni(ys) @ obrni(xs) @ [x] = obrni(ys) @ obrni(x::xs)
+
+6. trditev: dolzina (obrni xs) = dolzina xs
+
+	x = []: dolzina (obrni[]) = dolzina []
+	x -> x::xs: dolzina(obrni x::xs) = dolzina x::xs = dolzina(obrnix xs) + dolzina[x] = inducijska predpostvaka =
+		= dolzina xs + dolzina [x] (dolzinaxs = 1) = 1 + dolzina xs = dolzina(x::xs)
